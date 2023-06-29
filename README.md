@@ -50,7 +50,7 @@ Future enhancements to this project could include tuning the parameters of the N
 
 ## Author
 
-<Mina Mehdinia>
+Mina Mehdinia
 
 ## License
 
