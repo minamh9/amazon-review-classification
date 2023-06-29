@@ -39,8 +39,6 @@ The project also includes visualizations such as the distribution of ratings and
 - sklearn
 - matplotlib
 - numpy
-- transformers
-- torch
 
 ## Usage
 
