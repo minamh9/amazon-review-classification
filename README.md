@@ -1,39 +1,56 @@
-# Amazon Reviews Rating Prediction
+# Amazon Customer Reviews Rating Prediction using Naive Bayes
 
-## Introduction
+This repository contains an implementation of a Naive Bayes classifier to predict the rating of a review based on its text.
 
-This project involves the development of a Naive Bayes classifier for predicting the rating of a product on Amazon based on the text of a customer's review. The rating range is from 1 to 5, and the goal is to accurately predict this rating using the words and phrases in the review text.
+## Project Overview
 
-## Methodology
+We have a dataset of customer reviews for different products on Amazon, each associated with a rating ranging from 1 to 5. The goal is to build a Naive Bayes classifier to predict the rating of a review based on the text of the review. 
 
-The Naive Bayes classifier begins by analyzing training data which consists of reviews and their corresponding ratings. It calculates the prior probability of each rating occurring in the dataset. For example, it determines the likelihood of a rating being between 1 and 5 based on the proportions of these ratings in the training data.
+This classifier works by first analyzing the training data, which includes reviews and their corresponding ratings. It calculates the prior probability of each rating occurring in the dataset and the likelihood of observing each word in the reviews given a specific rating. It then uses this information to predict the rating of new reviews.
 
-In addition, the classifier calculates the likelihood of observing each word in the reviews given a specific rating. For example, it determines the probability of seeing the word "great" in a review with a rating of 5.
+## Files Description
 
-The classifier uses the test data to predict the ratings. It calculates the probability of the review belonging to each rating category based on the words and phrases present in the review. It does this by multiplying the prior probability of each rating with the likelihood of observing the words in the review given that rating. Finally, it assigns the review to the rating category with the highest probability.
+- `AMAZON_FASHION.json.gz`: Dataset containing Amazon customer reviews.
+- `naive_bayes_classifier.ipynb`: Jupyter Notebook file containing the code for the project.
 
-When calculating the precision, recall, and F1 score, the 'weighted' parameter is used. This considers the number of samples in each class, and calculates a weighted average of precision and recall, giving more weight to classes with a larger number of samples. This means that classes with more samples will have a greater impact on the overall performance metric.
+## Implementation Details
 
-## Installation
+The implementation involves several steps:
 
-1. Clone this repository
-2. Install the required packages (Python 3.x, pandas, sklearn, matplotlib)
-3. Download the dataset and place it in the `data/` folder
+1. Loading and cleaning the dataset
+2. Performing exploratory data analysis
+3. Vectorizing the text data
+4. Training the Naive Bayes model
+5. Making predictions on the test set
+6. Evaluating the model
+
+## Evaluation Metrics
+
+We evaluate the model using precision, recall, and F1 score with the `average='weighted'` parameter. The weighted average considers the number of samples in each class and calculates a weighted average, giving more weight to classes with a larger number of samples.
+
+## Visualization
+
+The project also includes visualizations such as the distribution of ratings and the Receiver Operating Characteristic (ROC) curve for each class.
+
+## Libraries Used
+
+- pandas
+- gzip
+- sklearn
+- matplotlib
+- numpy
 
 ## Usage
 
-Open the `main.ipynb` file in Jupyter Notebook to see the steps taken to implement the Naive Bayes classifier and interpret the results.
+To use this project, first clone the repository. Then open and run the Jupyter Notebook `naive_bayes_classifier.ipynb`.
 
-## Contributing
+## Future Enhancements
 
-Contributions are welcome! Please fork the repository and create a pull request with your changes.
+Future enhancements to this project could include tuning the parameters of the Naive Bayes classifier or trying different types of classifiers to compare their performance.
 
-## Figures
+## Author
 
-Here are some figures from our analysis:
-
-![Figure 1](figures/figure1.png)
-![Figure 2](figures/figure2.png)
+Mina Mehdinia
 
 ## License
 
